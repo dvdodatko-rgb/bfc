@@ -43,38 +43,38 @@ const coffeeProfiles = {
   fruit: {
     desc: "Яскраві, фруктові, квіткові — для тих, хто любить кислинку й життя у кольорі 🌸",
     coffees: [
-      { name: "Ethiopia Gedeb", link: "https://bfc24.com/uk/store/product/43", img: "https://bfc24.com/images/products/gedeb.jpg" },
-      { name: "Kenya AA Gikanda Kangocho", link: "https://bfc24.com/uk/store/product/39", img: "https://bfc24.com/images/products/kenya-aa.jpg" },
-      { name: "Ethiopia Aleta Wondo", link: "https://bfc24.com/uk/store/product/32", img: "https://bfc24.com/images/products/aleta-wondo.jpg" }
+      { name: "Ethiopia Gedeb", link: "https://bfc24.com/uk/store/product/43", img: "https://api.bfc24.com/storage/shop-product-main/195/mf999YisFaaYB4lXpj7HJojNa47NMUt1rGYvlV8x.png" },
+      { name: "Kenya AA Gikanda Kangocho", link: "https://bfc24.com/uk/store/product/39", img: "https://api.bfc24.com/storage/shop-product-main/194/63whZfXTOUJShWGRK2U4KV65LLpIEdEwIHlJa0XF.png" },
+      { name: "Ethiopia Aleta Wondo", link: "https://bfc24.com/uk/store/product/32", img: "https://api.bfc24.com/storage/shop-product-main/189/jrRSQe1OyVqBqTGY2Mh3JjCO6iQS2kkr47JT8fyB.png" }
     ]
   },
   choco: {
     desc: "Класика з шоколадом і горіхами — кава для затишку і стабільності 🍫",
     coffees: [
-      { name: "Brazil Mogiana", link: "https://bfc24.com/uk/store/product/33", img: "https://bfc24.com/images/products/mogiana.jpg" },
-      { name: "Colombia Excelso", link: "https://bfc24.com/uk/store/product/35", img: "https://bfc24.com/images/products/excelso.jpg" }
+      { name: "Brazil Mogiana", link: "https://bfc24.com/uk/store/product/33", img: "https://api.bfc24.com/storage/shop-product-main/190/xDqjZ3SgFp8SCuc3UWYiNDH9xuQc2n8e04KJvga9.png" },
+      { name: "Colombia Excelso", link: "https://bfc24.com/uk/store/product/35", img: "https://api.bfc24.com/storage/shop-product-main/192/9t76oqSZr51UdsEpD1COeO5UjkhiguQ031Yv6G4l.png" }
     ]
   },
   dessert: {
     desc: "Нуга, карамель, солодкий десерт у чашці 🍯",
     coffees: [
-      { name: "Arabica Midday", link: "https://bfc24.com/uk/store/product/45", img: "https://bfc24.com/images/products/midday.jpg" },
-      { name: "Arabica Midnight", link: "https://bfc24.com/uk/store/product/31", img: "https://bfc24.com/images/products/midnight.jpg" },
-      { name: "Arabica Sunrise", link: "https://bfc24.com/uk/store/product/36", img: "https://bfc24.com/images/products/sunrise.jpg" }
+      { name: "Arabica Midday", link: "https://bfc24.com/uk/store/product/45", img: "https://api.bfc24.com/storage/shop-product-main/200/9RehDnUZlBYeQfEMLPJ0QGnWtGQyaMf3orvtfygU.png" },
+      { name: "Arabica Midnight", link: "https://bfc24.com/uk/store/product/31", img: "https://api.bfc24.com/storage/shop-product-main/188/SHWEji2TlS5is367f6dJx9s5VEe3DC0U0FNEypqK.png" },
+      { name: "Arabica Sunrise", link: "https://bfc24.com/uk/store/product/36", img: "https://api.bfc24.com/storage/shop-product-main/202/UrZHj6l5OPsd4uzbToHo4C0UDpCVTA4ZqCY4wBOO.png" }
     ]
   },
   dark: {
     desc: "Насичена, темна, гірка як життя у понеділок ☠️",
     coffees: [
-      { name: "Arabusta Dark", link: "https://bfc24.com/uk/store/product/29", img: "https://bfc24.com/images/products/arabusta-dark.jpg" },
-      { name: "Arabusta Amber", link: "https://bfc24.com/uk/store/product/30", img: "https://bfc24.com/images/products/arabusta-amber.jpg" },
-      { name: "Brazil Fazenda Pedra Grande", link: "https://bfc24.com/uk/store/product/41", img: "https://bfc24.com/images/products/pedra-grande.jpg" }
+      { name: "Arabusta Dark", link: "https://bfc24.com/uk/store/product/29", img: "https://api.bfc24.com/storage/shop-product-main/186/AqwGc64mT81pRoP3IHBPLVdXzgT8yO6UmlwR2gTW.png" },
+      { name: "Arabusta Amber", link: "https://bfc24.com/uk/store/product/30", img: "https://api.bfc24.com/storage/shop-product-main/187/79ZUpSBxx4Z0RP4GHsEd9ayAWsHxmkOLcth7j638.png" },
+      { name: "Brazil Fazenda Pedra Grande", link: "https://bfc24.com/uk/store/product/41", img: "https://api.bfc24.com/storage/shop-product-main/204/IT8G9pHXx73qkFTcoRaNsbP41p4wFAZlhhqoWGJy.jpg" }
     ]
   },
   classic: {
     desc: "Той самий смак, але без кофеїну 🌙",
     coffees: [
-      { name: "Decaf Colombia Huila", link: "https://bfc24.com/uk/store/product/34", img: "https://bfc24.com/images/products/decaf.jpg" }
+      { name: "Decaf Colombia Huila", link: "https://bfc24.com/uk/store/product/34", img: "https://api.bfc24.com/storage/shop-product-main/191/yCJkbyRhJ7sElqA1yMI5dauOkbXq3Y5gAUGcLDQS.png" }
     ]
   }
 };
