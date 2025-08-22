@@ -1,14 +1,14 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background: #f5f5f5;
-  color: #333;
+  background: #F5FFF9;
+  color: #282828;
   margin: 0;
   padding: 20px;
 }
 
-h1 {
-  color: #005661;
+h1, h2 {
+  color: #1C545F;
 }
 
 #quiz {
@@ -16,18 +16,21 @@ h1 {
 }
 
 button {
-  background: #005661;
+  background: #00A582;
   color: #fff;
   border: none;
   padding: 12px 20px;
   margin: 8px;
   border-radius: 8px;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s, transform 0.2s;
+  font-size: 16px;
 }
 
 button:hover {
-  background: #00A582;
+  background: #73FFD2;
+  color: #282828;
+  transform: scale(1.05);
 }
 
 .hidden {
@@ -40,4 +43,14 @@ button:hover {
   border-radius: 10px;
   background: #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 2px solid #FFE389;
+}
+
+a button {
+  background: #00A582;
+}
+
+a button:hover {
+  background: #73FFD2;
+  color: #282828;
 }
