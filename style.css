@@ -16,7 +16,7 @@ h1 {
 }
 
 button {
-  background: #5a3825;
+  background: #005661;
   color: #fff;
   border: none;
   padding: 12px 20px;
@@ -27,7 +27,7 @@ button {
 }
 
 button:hover {
-  background: #7a4c34;
+  background: #00A582;
 }
 
 .hidden {
