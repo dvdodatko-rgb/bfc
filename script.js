@@ -61,59 +61,30 @@ const coffeeProfiles = {
   fruit: {
     name: "Ethiopia Gedeb / Kenya AA",
     desc: "Яскраві, фруктові, квіткові — для тих, хто любить кислинку й життя у кольорі 🌸",
-    link: "https://bfc24.com/product/ethiopia?ref="
+    link: "https://bfc24.com/uk/store/product/43" // Gedeb
   },
   choco: {
     name: "Brazil Mogiana / Colombia Excelso",
     desc: "Класика з шоколадом і горіхами — кава для затишку і стабільності 🍫",
-    link: "https://bfc24.com/product/brazil?ref="
+    link: "https://bfc24.com/uk/store/product/33" // Mogiana
   },
-  nut: {
-    name: "Mexico El Buho / Arabusta Amber",
-    desc: "Горіхова глибина з легкими прянощами 🌰",
-    link: "https://bfc24.com/product/mexico?ref="
-  },
-  sweet: {
+  dessert: {
     name: "Arabica Midday / Midnight",
     desc: "Нуга, карамель, солодкий десерт у чашці 🍯",
-    link: "https://bfc24.com/product/midday?ref="
+    link: "https://bfc24.com/uk/store/product/45" // Midday
   },
   dark: {
     name: "Arabusta Dark / Amber",
     desc: "Насичена, темна, гірка як життя у понеділок ☠️",
-    link: "https://bfc24.com/product/arabusta-dark?ref="
-  },
-  acid: {
-    name: "Ethiopia Aleta Wondo",
-    desc: "Цитрусові та яскраві ноти лимону й жасмину 🍋",
-    link: "https://bfc24.com/product/aleta?ref="
-  },
-  filter: {
-    name: "Arabica Sunrise / Ethiopia",
-    desc: "Легка і свіжа кава для неквапливих моментів 🫖",
-    link: "https://bfc24.com/product/sunrise?ref="
-  },
-  espresso: {
-    name: "Colombia Cauca Popayan / Brazil Pedra Grande",
-    desc: "Насичений еспресо зі збалансованою солодкістю і міським характером 🌆",
-    link: "https://bfc24.com/product/popayan?ref="
-  },
-  decaf: {
-    name: "Decaf Colombia Huila",
-    desc: "Той самий смак, але без кофеїну 🌙",
-    link: "https://bfc24.com/product/decaf?ref="
-  },
-  flower: {
-    name: "Kenya AA / Ethiopia Gedeb",
-    desc: "Квіткові та вишукані ноти для справжніх гурманів 🌺",
-    link: "https://bfc24.com/product/kenya?ref="
+    link: "https://bfc24.com/uk/store/product/29" // Dark
   },
   classic: {
-    name: "Colombia Excelso",
-    desc: "Збалансований смак з нотами шоколаду й цитрусу ☕️",
-    link: "https://bfc24.com/product/excelso?ref="
+    name: "Decaf Colombia Huila",
+    desc: "Той самий смак, але без кофеїну 🌙",
+    link: "https://bfc24.com/uk/store/product/34" // Decaf
   }
 };
+
 
 // --- Логіка ---
 let currentQ = 0;
