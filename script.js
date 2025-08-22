@@ -1,42 +1,57 @@
 // --- Питання + відповіді + теги ---
 const questions = [
   {
-    text: "🍰 Улюблений десерт дитинства?",
+    text: "🍰 Який десерт тебе манить найбільше?",
     answers: [
-      { text: "Трубочка зі згущеним", tag: "dessert" },
-      { text: "Вафельний торт", tag: "choco" },
-      { text: "Лимонний тарт", tag: "fruit" },
       { text: "Шоколадний торт", tag: "choco" },
-      { text: "Бите скло", tag: "fruit" }
+      { text: "Фруктовий тарт", tag: "fruit" },
+      { text: "Горіхове печиво", tag: "nut" },
+      { text: "Медовик", tag: "sweet" }
     ]
   },
   {
-    text: "🍊 Який фрукт купуєте найчастіше?",
+    text: "🍊 Який фрукт твій улюблений?",
     answers: [
-      { text: "Яблуко", tag: "classic" },
-      { text: "Апельсин", tag: "fruit" },
-      { text: "Гранат", tag: "fruit" },
-      { text: "Банан", tag: "dessert" },
-      { text: "Слива", tag: "dark" }
+      { text: "🫐 Ягода (малина, чорниця, смородина)", tag: "fruit" },
+      { text: "🍋 Цитрус (апельсин, лимон, грейпфрут)", tag: "acid" },
+      { text: "🍏 Яблуко / груша", tag: "classic" },
+      { text: "🍇 Сухофрукти (чорнослив, фінік, ізюм)", tag: "dark" }
     ]
   },
   {
-    text: "🌸 Який парфум поставили б на полицю?",
+    text: "🎭 Який настрій у тебе зараз?",
     answers: [
-      { text: "Light Blue D&G", tag: "fruit" },
-      { text: "Black Opium YSL", tag: "choco" },
-      { text: "Bianco Latte Giardini", tag: "dessert" },
-      { text: "Dior Poison", tag: "dark" },
-      { text: "Lost Cherry Tom Ford", tag: "fruit" }
+      { text: "🌞 Легкість і свіже повітря", tag: "filter" },
+      { text: "🌆 Динаміка великого міста", tag: "espresso" },
+      { text: "🌌 Глибокі роздуми і тиша", tag: "dark" },
+      { text: "💖 Турбота про себе", tag: "decaf" }
     ]
   },
   {
-    text: "☕ Яка сцена вам ближча?",
+    text: "🎶 З якою музикою ти б випив каву?",
     answers: [
-      { text: "Середземна фієста", tag: "fruit" },
-      { text: "Прогулянка після дощу", tag: "fruit" },
-      { text: "Затишний плед і книга", tag: "choco" },
-      { text: "Ранковий коворкінг", tag: "dark" }
+      { text: "🎻 Джаз / класика", tag: "fruit" },
+      { text: "🎸 Рок / інді", tag: "nut" },
+      { text: "🎹 Поп / лаунж", tag: "choco" },
+      { text: "🥁 Техно / реп", tag: "dark" }
+    ]
+  },
+  {
+    text: "🥛 Яку текстуру напою ти любиш?",
+    answers: [
+      { text: "🫖 Легку, як чай", tag: "filter" },
+      { text: "☁️ Кремову, оксамитову", tag: "sweet" },
+      { text: "🍫 Сиропову і густу", tag: "dark" },
+      { text: "🍎 Соковиту і фруктову", tag: "fruit" }
+    ]
+  },
+  {
+    text: "🌸 Які парфуми тобі ближчі?",
+    answers: [
+      { text: "Chanel Chance Eau Tendre, Dior J’Adore, Gucci Bloom", tag: "flower" },
+      { text: "Dolce & Gabbana Light Blue, Acqua di Gioia, Versace Bright Crystal", tag: "acid" },
+      { text: "YSL Black Opium, Mugler Angel, Prada Candy", tag: "choco" },
+      { text: "Tom Ford Oud Wood, Armani Code, D&G The One", tag: "nut" }
     ]
   }
 ];
@@ -49,11 +64,16 @@ const coffeeProfiles = {
     link: "https://bfc24.com/product/ethiopia?ref="
   },
   choco: {
-    name: "Brazil / Colombia Excelso",
+    name: "Brazil Mogiana / Colombia Excelso",
     desc: "Класика з шоколадом і горіхами — кава для затишку і стабільності 🍫",
     link: "https://bfc24.com/product/brazil?ref="
   },
-  dessert: {
+  nut: {
+    name: "Mexico El Buho / Arabusta Amber",
+    desc: "Горіхова глибина з легкими прянощами 🌰",
+    link: "https://bfc24.com/product/mexico?ref="
+  },
+  sweet: {
     name: "Arabica Midday / Midnight",
     desc: "Нуга, карамель, солодкий десерт у чашці 🍯",
     link: "https://bfc24.com/product/midday?ref="
@@ -63,16 +83,43 @@ const coffeeProfiles = {
     desc: "Насичена, темна, гірка як життя у понеділок ☠️",
     link: "https://bfc24.com/product/arabusta-dark?ref="
   },
-  classic: {
+  acid: {
+    name: "Ethiopia Aleta Wondo",
+    desc: "Цитрусові та яскраві ноти лимону й жасмину 🍋",
+    link: "https://bfc24.com/product/aleta?ref="
+  },
+  filter: {
+    name: "Arabica Sunrise / Ethiopia",
+    desc: "Легка і свіжа кава для неквапливих моментів 🫖",
+    link: "https://bfc24.com/product/sunrise?ref="
+  },
+  espresso: {
+    name: "Colombia Cauca Popayan / Brazil Pedra Grande",
+    desc: "Насичений еспресо зі збалансованою солодкістю і міським характером 🌆",
+    link: "https://bfc24.com/product/popayan?ref="
+  },
+  decaf: {
     name: "Decaf Colombia Huila",
     desc: "Той самий смак, але без кофеїну 🌙",
     link: "https://bfc24.com/product/decaf?ref="
+  },
+  flower: {
+    name: "Kenya AA / Ethiopia Gedeb",
+    desc: "Квіткові та вишукані ноти для справжніх гурманів 🌺",
+    link: "https://bfc24.com/product/kenya?ref="
+  },
+  classic: {
+    name: "Colombia Excelso",
+    desc: "Збалансований смак з нотами шоколаду й цитрусу ☕️",
+    link: "https://bfc24.com/product/excelso?ref="
   }
 };
 
 // --- Логіка ---
 let currentQ = 0;
-let scores = { fruit: 0, choco: 0, dessert: 0, dark: 0, classic: 0 };
+let scores = {};
+
+Object.keys(coffeeProfiles).forEach(k => scores[k] = 0);
 
 const quizEl = document.getElementById("quiz");
 const nextBtn = document.getElementById("nextBtn");
