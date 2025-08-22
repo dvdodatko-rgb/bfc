@@ -44,31 +44,31 @@ const coffeeProfiles = {
     name: "Ethiopia Gedeb / Kenya AA",
     desc: "Яскраві, фруктові, квіткові — для тих, хто любить кислинку 🌸",
     link: "https://bfc24.com/uk/store/product/43",
-    img: "images/coffee_placeholder.jpg"
+    img: "images/coffee_placeholder.png"
   },
   choco: {
     name: "Brazil Mogiana / Colombia Excelso",
     desc: "Класика з шоколадом і горіхами 🍫",
     link: "https://bfc24.com/uk/store/product/33",
-    img: "images/coffee_placeholder.jpg"
+    img: "images/coffee_placeholder.png"
   },
   dessert: {
     name: "Arabica Midday / Midnight",
     desc: "Нуга, карамель, солодкий десерт у чашці 🍯",
     link: "https://bfc24.com/uk/store/product/45",
-    img: "images/coffee_placeholder.jpg"
+    img: "images/coffee_placeholder.png"
   },
   dark: {
     name: "Arabusta Dark / Amber",
     desc: "Насичена, темна, гірка як життя у понеділок ☠️",
     link: "https://bfc24.com/uk/store/product/29",
-    img: "images/coffee_placeholder.jpg"
+    img: "images/coffee_placeholder.png"
   },
   classic: {
     name: "Decaf Colombia Huila",
     desc: "Той самий смак, але без кофеїну 🌙",
     link: "https://bfc24.com/uk/store/product/34",
-    img: "images/coffee_placeholder.jpg"
+    img: "images/coffee_placeholder.png"
   }
 };
 
