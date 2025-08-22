@@ -2,15 +2,18 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   background: #F5FFF9;
-  color: #282828;
+  color: #03090A;
   margin: 0;
   padding: 20px;
 }
 
-h1, h2 {
-  color: #1C545F;
+h1 {
+  color: #00A582; /* заголовки h1 тепер зелені */
 }
 
+h2 {
+  color: #1C545F; /* заголовки h2 темно-бірюзові */
+}
 #quiz {
   margin: 20px 0;
 }
@@ -28,7 +31,7 @@ button {
 }
 
 button:hover {
-  background: #73FFD2;
+  background: #FFE389;
   color: #282828;
   transform: scale(1.05);
 }
