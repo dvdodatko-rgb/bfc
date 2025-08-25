@@ -3,10 +3,10 @@ const questions = [
   {
     text: "🍰 Улюблений десерт дитинства?",
     answers: [
-      { text: "Шоколадний торт", tag: "choco" },
-      { text: "Фруктовий тарт", tag: "fruit" },
-      { text: "Горіхове печиво", tag: "dark" },
-      { text: "Медовик", tag: "dessert" }
+      { text: "Шоколадний торт", tag: "choco", img: "images/dessert_choco.png" },
+      { text: "Мармелад", tag: "fruit", img: "images/dessert_marmelad.png" },
+      { text: "Халва", tag: "dark", img: "images/dessert_halva.png" },
+      { text: "Медовик", tag: "dessert", img: "images/dessert_honey.png" }
     ]
   },
   {
@@ -89,20 +89,46 @@ const resultEl = document.getElementById("result");
 
 function showQuestion() {
   quizEl.innerHTML = `<h2>${questions[currentQ].text}</h2>`;
-  questions[currentQ].answers.forEach(a => {
-    const btn = document.createElement("button");
-    btn.textContent = a.text;
-    btn.onclick = () => {
-      scores[a.tag]++;
-      currentQ++;
-      if (currentQ < questions.length) {
-        showQuestion();
-      } else {
-        showResult();
-      }
-    };
-    quizEl.appendChild(btn);
-  });
+
+  // Якщо перше питання → галерея
+  if (currentQ === 0) {
+    const gallery = document.createElement("div");
+    gallery.className = "gallery";
+
+    questions[currentQ].answers.forEach(a => {
+      const card = document.createElement("div");
+      card.className = "gallery-item";
+      card.innerHTML = `<img src="${a.img}" alt="${a.text}"><p>${a.text}</p>`;
+      card.onclick = () => {
+        scores[a.tag]++;
+        currentQ++;
+        if (currentQ < questions.length) {
+          showQuestion();
+        } else {
+          showResult();
+        }
+      };
+      gallery.appendChild(card);
+    });
+
+    quizEl.appendChild(gallery);
+  } else {
+    // Для інших питань – кнопки
+    questions[currentQ].answers.forEach(a => {
+      const btn = document.createElement("button");
+      btn.textContent = a.text;
+      btn.onclick = () => {
+        scores[a.tag]++;
+        currentQ++;
+        if (currentQ < questions.length) {
+          showQuestion();
+        } else {
+          showResult();
+        }
+      };
+      quizEl.appendChild(btn);
+    });
+  }
 }
 
 function showResult() {
@@ -112,19 +138,16 @@ function showResult() {
   const coffeeSet = coffeeProfiles[winner];
   const coffee = coffeeSet.coffees[Math.floor(Math.random() * coffeeSet.coffees.length)];
 
-  // читаємо параметр ?ref=...
-  const ref = new URLSearchParams(window.location.search).get("ref");
-  const finalLink = ref ? `${coffee.link}?ref=${ref}` : coffee.link;
-
   resultEl.innerHTML = `
     <h2>Ваша кава — ${coffee.name}</h2>
     <img src="${coffee.img}" alt="${coffee.name}">
     <p>${coffeeSet.desc}</p>
-    <a href="${finalLink}" target="_blank">
+    <a href="${coffee.link}" target="_blank">
       <button>☕ Замовити</button>
     </a>
   `;
   quizEl.classList.add("hidden");
   resultEl.classList.remove("hidden");
 }
-showQuestion();
+
+document.addEventListener("DOMContentLoaded", showQuestion);
