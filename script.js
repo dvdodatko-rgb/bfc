@@ -60,7 +60,7 @@ const questions = [
       { text: "Фільтр (V60, Chemex)", tag: "fruit", img: "images/brew_filter.png" },
       { text: "Еспресо-машина", tag: "choco", img: "images/brew_espresso.png" },
       { text: "Гейзерна (Moka pot)", tag: "dark", img: "images/brew_moka.png" },
-      { text: "Турка", tag: "dessert", img: "images/brew_turkish.png" }
+      { text: "Френч Прес, Чашка", tag: "dessert", img: "images/brew_turkish.png" }
     ]
   }
 ];
