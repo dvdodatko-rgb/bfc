@@ -19,23 +19,6 @@ h2 {
   margin: 20px 0;
 }
 
-button {
-  background: #00A582;
-  color: #fff;
-  border: none;
-  padding: 12px 20px;
-  margin: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
-}
-
-button:hover {
-  background: #73FFD2;
-  color: #282828;
-  transform: scale(1.05);
-}
-
 .hidden {
   display: none;
 }
@@ -55,7 +38,7 @@ button:hover {
   display: block;
 }
 
-/* контейнер без плашки */
+/* стилі для галереї */
 .gallery {
   display: flex;
   justify-content: center;
@@ -63,16 +46,12 @@ button:hover {
   gap: 16px;
   flex-wrap: wrap;
   padding: 0;
-  background: none;
-  border-radius: 0;
-  box-shadow: none;
 }
 
-/* кожна картка = як кнопка */
 .gallery-item {
   width: 160px;
-  background: #00A582;        /* зелений фон */
-  color: #fff;                /* світлий текст */
+  background: #00A582;
+  color: #fff;
   border-radius: 8px;
   text-align: center;
   cursor: pointer;
@@ -81,12 +60,11 @@ button:hover {
 }
 
 .gallery-item:hover {
-  background: #73FFD2;        /* ховер, як у кнопок */
+  background: #FFE389; /* світло-жовтий при hover */
   color: #282828;
   transform: scale(1.05);
 }
 
-/* картинка всередині */
 .gallery-item img {
   width: 100%;
   height: auto;
@@ -94,11 +72,9 @@ button:hover {
   margin-bottom: 8px;
 }
 
-/* підпис */
 .gallery-item p {
   margin: 0;
   font-size: 14px;
   font-weight: 600;
   color: #fff;
 }
-
