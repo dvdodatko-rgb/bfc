@@ -4,8 +4,8 @@ const questions = [
     text: "🍰 Улюблений десерт дитинства?",
     answers: [
       { text: "Шоколадний торт", tag: "choco", img: "images/dessert_choco.png" },
-      { text: "Фруктовий тарт", tag: "fruit", img: "images/dessert_fruit.png" },
-      { text: "Горіхове печиво", tag: "dark", img: "images/dessert_nut.png" },
+      { text: "Мармелад", tag: "fruit", img: "images/dessert_marmelad.png" },
+      { text: "Халва", tag: "dark", img: "images/dessert_halva.png" },
       { text: "Медовик", tag: "dessert", img: "images/dessert_honey.png" }
     ]
   },
