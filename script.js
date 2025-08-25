@@ -12,28 +12,55 @@ const questions = [
   {
     text: "🍊 Який фрукт твій улюблений?",
     answers: [
-      { text: "Ягода (малина, чорниця, смородина)", tag: "fruit" },
-      { text: "Цитрус (апельсин, лимон, грейпфрут)", tag: "fruit" },
-      { text: "Яблуко / груша", tag: "choco" },
-      { text: "Сухофрукти (чорнослив, фінік, ізюм)", tag: "dark" }
+      { text: "Ягода", tag: "fruit", img: "images/fruit_berry.png" },
+      { text: "Цитрус", tag: "fruit", img: "images/fruit_citrus.png" },
+      { text: "Яблуко/груша", tag: "choco", img: "images/fruit_apple.png" },
+      { text: "Сухофрукти", tag: "dark", img: "images/fruit_dry.png" }
     ]
   },
   {
     text: "🌸 Які парфуми тобі ближчі?",
     answers: [
-      { text: "Chanel Chance Eau Tendre / Dior J’Adore", tag: "fruit" },
-      { text: "Dolce & Gabbana Light Blue / Acqua di Gioia", tag: "fruit" },
-      { text: "YSL Black Opium / Prada Candy", tag: "choco" },
-      { text: "Tom Ford Oud Wood / D&G The One", tag: "dark" }
+      { text: "Квіткові", tag: "fruit", img: "images/perfume_flower.png" },
+      { text: "Свіжі цитрусові", tag: "fruit", img: "images/perfume_citrus.png" },
+      { text: "Солодкі гурманські", tag: "choco", img: "images/perfume_sweet.png" },
+      { text: "Деревні/пряні", tag: "dark", img: "images/perfume_wood.png" }
     ]
   },
   {
     text: "☕ Яка сцена тобі ближча?",
     answers: [
-      { text: "Середземна фієста", tag: "fruit" },
-      { text: "Прогулянка після дощу", tag: "fruit" },
-      { text: "Затишний плед і книга", tag: "choco" },
-      { text: "Ранковий коворкінг", tag: "dark" }
+      { text: "Середземна фієста", tag: "fruit", img: "images/scene_fiesta.png" },
+      { text: "Прогулянка після дощу", tag: "fruit", img: "images/scene_rain.png" },
+      { text: "Затишний плед і книга", tag: "choco", img: "images/scene_book.png" },
+      { text: "Ранковий коворкінг", tag: "dark", img: "images/scene_cowork.png" }
+    ]
+  },
+  {
+    text: "🍸 Який коктейль твій улюблений?",
+    answers: [
+      { text: "Апероль Шприц", tag: "fruit", img: "images/cocktail_aperol.png" },
+      { text: "Мохіто", tag: "dessert", img: "images/cocktail_mojito.png" },
+      { text: "Віскі-кола", tag: "dark", img: "images/cocktail_whiskey.png" },
+      { text: "Еспресо мартіні", tag: "choco", img: "images/cocktail_espresso.png" }
+    ]
+  },
+  {
+    text: "🌿 Як ти любиш проводити вихідні?",
+    answers: [
+      { text: "Прогулянка на природі", tag: "fruit", img: "images/weekend_nature.png" },
+      { text: "Вечірка з друзями", tag: "dark", img: "images/weekend_party.png" },
+      { text: "Затишний день вдома", tag: "choco", img: "images/weekend_home.png" },
+      { text: "Подорож у нове місто", tag: "dessert", img: "images/weekend_trip.png" }
+    ]
+  },
+  {
+    text: "🫖 Який метод заварювання тобі ближче?",
+    answers: [
+      { text: "Фільтр (V60, Chemex)", tag: "fruit", img: "images/brew_filter.png" },
+      { text: "Еспресо-машина", tag: "choco", img: "images/brew_espresso.png" },
+      { text: "Гейзерна (Moka pot)", tag: "dark", img: "images/brew_moka.png" },
+      { text: "Турка", tag: "dessert", img: "images/brew_turkish.png" }
     ]
   }
 ];
@@ -51,10 +78,7 @@ const coffeeProfiles = {
     desc: "Класика з шоколадом і горіхами — кава для затишку і стабільності 🍫",
     coffees: [
       { name: "Brazil Mogiana", link: "https://bfc24.com/uk/store/product/33", img: "images/brazil_mogiana.png" },
-      { name: "Brazil Fazenda Pedra Grande", link: "https://bfc24.com/uk/store/product/41", img: "images/brazil_fazenda.png" },
-      { name: "Colombia Excelso", link: "https://bfc24.com/uk/store/product/35", img: "images/colombia_excelso.png" },
-      { name: "Colombia Cauca Popayan", link: "https://bfc24.com/uk/store/product/40", img: "images/columbia_cauca.png" },
-      { name: "Mexico El Buho", link: "https://bfc24.com/uk/store/product/38", img: "images/mexico_el_buho.png" }
+      { name: "Colombia Excelso", link: "https://bfc24.com/uk/store/product/35", img: "images/colombia_excelso.png" }
     ]
   },
   dessert: {
@@ -89,46 +113,26 @@ const resultEl = document.getElementById("result");
 
 function showQuestion() {
   quizEl.innerHTML = `<h2>${questions[currentQ].text}</h2>`;
+  const gallery = document.createElement("div");
+  gallery.className = "gallery";
 
-  // Якщо перше питання → галерея
-  if (currentQ === 0) {
-    const gallery = document.createElement("div");
-    gallery.className = "gallery";
+  questions[currentQ].answers.forEach(a => {
+    const card = document.createElement("div");
+    card.className = "gallery-item";
+    card.innerHTML = `<img src="${a.img}" alt="${a.text}"><p>${a.text}</p>`;
+    card.onclick = () => {
+      scores[a.tag]++;
+      currentQ++;
+      if (currentQ < questions.length) {
+        showQuestion();
+      } else {
+        showResult();
+      }
+    };
+    gallery.appendChild(card);
+  });
 
-    questions[currentQ].answers.forEach(a => {
-      const card = document.createElement("div");
-      card.className = "gallery-item";
-      card.innerHTML = `<img src="${a.img}" alt="${a.text}"><p>${a.text}</p>`;
-      card.onclick = () => {
-        scores[a.tag]++;
-        currentQ++;
-        if (currentQ < questions.length) {
-          showQuestion();
-        } else {
-          showResult();
-        }
-      };
-      gallery.appendChild(card);
-    });
-
-    quizEl.appendChild(gallery);
-  } else {
-    // Для інших питань – кнопки
-    questions[currentQ].answers.forEach(a => {
-      const btn = document.createElement("button");
-      btn.textContent = a.text;
-      btn.onclick = () => {
-        scores[a.tag]++;
-        currentQ++;
-        if (currentQ < questions.length) {
-          showQuestion();
-        } else {
-          showResult();
-        }
-      };
-      quizEl.appendChild(btn);
-    });
-  }
+  quizEl.appendChild(gallery);
 }
 
 function showResult() {
