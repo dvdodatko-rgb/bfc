@@ -54,3 +54,44 @@ button:hover {
   margin: 15px auto;
   display: block;
 }
+
+/* стилі для галереї */
+.gallery {
+  display: flex;
+  padding: 24px 12px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+  background: #F1F8FF;
+  border-radius: 24px;
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.16);
+}
+
+.gallery-item {
+  width: 140px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-item p {
+  margin: 8px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #282828;
+}
