@@ -112,16 +112,19 @@ function showResult() {
   const coffeeSet = coffeeProfiles[winner];
   const coffee = coffeeSet.coffees[Math.floor(Math.random() * coffeeSet.coffees.length)];
 
+  // читаємо параметр ?ref=...
+  const ref = new URLSearchParams(window.location.search).get("ref");
+  const finalLink = ref ? `${coffee.link}?ref=${ref}` : coffee.link;
+
   resultEl.innerHTML = `
     <h2>Ваша кава — ${coffee.name}</h2>
     <img src="${coffee.img}" alt="${coffee.name}">
     <p>${coffeeSet.desc}</p>
-    <a href="${coffee.link}" target="_blank">
+    <a href="${finalLink}" target="_blank">
       <button>☕ Замовити</button>
     </a>
   `;
   quizEl.classList.add("hidden");
   resultEl.classList.remove("hidden");
 }
-
 showQuestion();
