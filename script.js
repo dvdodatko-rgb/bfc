@@ -41,34 +41,42 @@ const questions = [
 // --- Профілі кави ---
 const coffeeProfiles = {
   fruit: {
-    name: "Ethiopia Gedeb / Kenya AA",
-    desc: "Яскраві, фруктові, квіткові — для тих, хто любить кислинку 🌸",
-    link: "https://bfc24.com/uk/store/product/43",
-    img: "images/coffee_placeholder.png"
+    desc: "Яскраві, фруктові, квіткові — для тих, хто любить кислинку й життя у кольорі 🌸",
+    coffees: [
+      { name: "Ethiopia Gedeb", link: "https://bfc24.com/uk/store/product/43", img: "images/ethiopia_gadeb.png" },
+      { name: "Kenya AA Gikanda Kangocho", link: "https://bfc24.com/uk/store/product/39", img: "images/kenya_aa.png" }
+    ]
   },
   choco: {
-    name: "Brazil Mogiana / Colombia Excelso",
-    desc: "Класика з шоколадом і горіхами 🍫",
-    link: "https://bfc24.com/uk/store/product/33",
-    img: "images/coffee_placeholder.png"
+    desc: "Класика з шоколадом і горіхами — кава для затишку і стабільності 🍫",
+    coffees: [
+      { name: "Brazil Mogiana", link: "https://bfc24.com/uk/store/product/33", img: "images/brazil_mogiana.png" },
+      { name: "Brazil Fazenda Pedra Grande", link: "https://bfc24.com/uk/store/product/41", img: "images/brazil_fazenda.png" },
+      { name: "Colombia Excelso", link: "https://bfc24.com/uk/store/product/35", img: "images/colombia_excelso.png" },
+      { name: "Colombia Cauca Popayan", link: "https://bfc24.com/uk/store/product/40", img: "images/columbia_cauca.png" },
+      { name: "Mexico El Buho", link: "https://bfc24.com/uk/store/product/38", img: "images/mexico_el_buho.png" }
+    ]
   },
   dessert: {
-    name: "Arabica Midday / Midnight",
     desc: "Нуга, карамель, солодкий десерт у чашці 🍯",
-    link: "https://bfc24.com/uk/store/product/45",
-    img: "images/coffee_placeholder.png"
+    coffees: [
+      { name: "Arabica Midday", link: "https://bfc24.com/uk/store/product/45", img: "images/midday.png" },
+      { name: "Arabica Midnight", link: "https://bfc24.com/uk/store/product/31", img: "images/midnight.png" },
+      { name: "Arabica Sunrise", link: "https://bfc24.com/uk/store/product/36", img: "images/sunrise.png" }
+    ]
   },
   dark: {
-    name: "Arabusta Dark / Amber",
     desc: "Насичена, темна, гірка як життя у понеділок ☠️",
-    link: "https://bfc24.com/uk/store/product/29",
-    img: "images/coffee_placeholder.png"
+    coffees: [
+      { name: "Arabusta Dark", link: "https://bfc24.com/uk/store/product/29", img: "images/dark.png" },
+      { name: "Arabusta Amber", link: "https://bfc24.com/uk/store/product/30", img: "images/amber.png" }
+    ]
   },
   classic: {
-    name: "Decaf Colombia Huila",
     desc: "Той самий смак, але без кофеїну 🌙",
-    link: "https://bfc24.com/uk/store/product/34",
-    img: "images/coffee_placeholder.png"
+    coffees: [
+      { name: "Decaf Colombia Huila", link: "https://bfc24.com/uk/store/product/34", img: "images/columbia_decaf.png" }
+    ]
   }
 };
 
@@ -77,7 +85,6 @@ let currentQ = 0;
 let scores = { fruit: 0, choco: 0, dessert: 0, dark: 0, classic: 0 };
 
 const quizEl = document.getElementById("quiz");
-const nextBtn = document.getElementById("nextBtn");
 const resultEl = document.getElementById("result");
 
 function showQuestion() {
@@ -87,11 +94,15 @@ function showQuestion() {
     btn.textContent = a.text;
     btn.onclick = () => {
       scores[a.tag]++;
-      nextBtn.classList.remove("hidden");
+      currentQ++;
+      if (currentQ < questions.length) {
+        showQuestion();
+      } else {
+        showResult();
+      }
     };
     quizEl.appendChild(btn);
   });
-  nextBtn.classList.add("hidden");
 }
 
 function showResult() {
@@ -101,27 +112,4 @@ function showResult() {
   const coffeeSet = coffeeProfiles[winner];
   const coffee = coffeeSet.coffees[Math.floor(Math.random() * coffeeSet.coffees.length)];
 
-  resultEl.innerHTML = `
-  <h2>Ваша кава — ${coffee.name}</h2>
-  <img src="${coffee.img}" alt="${coffee.name}" 
-       style="max-width:250px; border-radius:12px; margin:15px 0;">
-  <p>${coffee.desc}</p>
-  <a href="${coffee.link}" target="_blank">
-    <button>☕ Замовити</button>
-  </a>
-`;
-  quizEl.classList.add("hidden");
-  nextBtn.classList.add("hidden");
-  resultEl.classList.remove("hidden");
-}
-
-nextBtn.onclick = () => {
-  currentQ++;
-  if (currentQ < questions.length) {
-    showQuestion();
-  } else {
-    showResult();
-  }
-};
-
-showQuestion();
+  result
