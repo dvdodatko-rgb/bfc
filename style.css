@@ -61,12 +61,12 @@ button {
 }
 
 button:hover {
-  background: #FFE389;   /* жовтий при hover */
+  background: #FFE389;
   color: #282828;
   transform: scale(1.05);
 }
 
-/* галерея для варіантів */
+/* галерея для варіантів і рекомендацій */
 .gallery {
   display: flex;
   justify-content: center;
@@ -79,30 +79,31 @@ button:hover {
 
 /* картки однакової висоти */
 .gallery-item {
-  width: 160px;
+  width: 180px;
   height: 220px;              /* однакова висота */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #00A582;        /* зелений фон */
+  background: #00A582;
   color: #fff;
   border-radius: 8px;
   text-align: center;
   cursor: pointer;
   padding: 12px;
   transition: background 0.3s, transform 0.2s;
+  text-decoration: none;       /* для <a> як блок */
 }
 
 .gallery-item:hover {
-  background: #FFE389;        /* жовтий при hover */
+  background: #FFE389;
   color: #282828;
   transform: scale(1.05);
 }
 
 .gallery-item img {
   width: 100%;
-  height: 120px;              /* однакова висота картинки */
-  object-fit: cover;          /* підрізає зайве, не спотворює */
+  height: 120px;               /* однакова висота картинки */
+  object-fit: cover;
   border-radius: 6px;
   margin-bottom: 8px;
 }
@@ -112,23 +113,6 @@ button:hover {
   font-size: 14px;
   font-weight: 600;
   color: #fff;
-}
-
-/* галерея в блоці "Вам також може сподобатися" */
-#result .gallery {
-  margin-top: 10px;
-  gap: 20px;
-}
-
-#result .gallery-item {
-  width: 180px;
-  height: auto;  /* у рекомендаціях можна різну висоту */
-  padding: 10px;
-}
-
-#result .gallery-item p {
-  color: #fff;
-  margin-top: 5px;
 }
 
 /* адаптивність */
