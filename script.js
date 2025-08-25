@@ -68,21 +68,21 @@ const questions = [
 // --- Профілі кави ---
 const coffeeProfiles = {
   fruit: {
-    desc: "Яскраві, фруктові, квіткові — для тих, хто любить кислинку й життя у кольорі 🌸",
+    desc: "Яскраві, фруктові, квіткові — для тих, хто любить кислинку й життя у кольорі 🌸 Вгадали? Замов та перевір!",
     coffees: [
       { name: "Ethiopia Gedeb", link: "https://bfc24.com/uk/store/product/43", img: "images/ethiopia_gadeb.png" },
       { name: "Kenya AA Gikanda Kangocho", link: "https://bfc24.com/uk/store/product/39", img: "images/kenya_aa.png" }
     ]
   },
   choco: {
-    desc: "Класика з шоколадом і горіхами — кава для затишку і стабільності 🍫",
+    desc: "Класика з шоколадом і горіхами — кава для затишку і стабільності 🍫 Вгадали? Замов та перевір!",
     coffees: [
       { name: "Brazil Mogiana", link: "https://bfc24.com/uk/store/product/33", img: "images/brazil_mogiana.png" },
       { name: "Colombia Excelso", link: "https://bfc24.com/uk/store/product/35", img: "images/colombia_excelso.png" }
     ]
   },
   dessert: {
-    desc: "Нуга, карамель, солодкий десерт у чашці 🍯",
+    desc: "Нуга, карамель, солодкий десерт у чашці 🍯 Вгадали? Замов та перевір!",
     coffees: [
       { name: "Arabica Midday", link: "https://bfc24.com/uk/store/product/45", img: "images/midday.png" },
       { name: "Arabica Midnight", link: "https://bfc24.com/uk/store/product/31", img: "images/midnight.png" },
@@ -90,14 +90,14 @@ const coffeeProfiles = {
     ]
   },
   dark: {
-    desc: "Насичена, темна, гірка як життя у понеділок ☠️",
+    desc: "Насичена, темна, гірка як життя у понеділок ☠️ Вгадали? Замов та перевір!",
     coffees: [
       { name: "Arabusta Dark", link: "https://bfc24.com/uk/store/product/29", img: "images/dark.png" },
       { name: "Arabusta Amber", link: "https://bfc24.com/uk/store/product/30", img: "images/amber.png" }
     ]
   },
   classic: {
-    desc: "Той самий смак, але без кофеїну 🌙",
+    desc: "Той самий смак, але без кофеїну 🌙 Вгадали? Замов та перевір!",
     coffees: [
       { name: "Decaf Colombia Huila", link: "https://bfc24.com/uk/store/product/34", img: "images/columbia_decaf.png" }
     ]
