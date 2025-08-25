@@ -55,43 +55,50 @@ button:hover {
   display: block;
 }
 
-/* стилі для галереї */
+/* контейнер без плашки */
 .gallery {
   display: flex;
-  padding: 24px 12px;
   justify-content: center;
   align-items: flex-start;
   gap: 16px;
   flex-wrap: wrap;
-  background: #F1F8FF;
-  border-radius: 24px;
-  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.16);
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
+/* кожна картка = як кнопка */
 .gallery-item {
-  width: 140px;
-  border-radius: 16px;
-  overflow: hidden;
-  background: #fff;
-  box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+  width: 160px;
+  background: #00A582;        /* зелений фон */
+  color: #fff;                /* світлий текст */
+  border-radius: 8px;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  padding: 12px;
+  transition: background 0.3s, transform 0.2s;
 }
 
 .gallery-item:hover {
+  background: #73FFD2;        /* ховер, як у кнопок */
+  color: #282828;
   transform: scale(1.05);
 }
 
+/* картинка всередині */
 .gallery-item img {
   width: 100%;
   height: auto;
-  display: block;
+  border-radius: 6px;
+  margin-bottom: 8px;
 }
 
+/* підпис */
 .gallery-item p {
-  margin: 8px 0;
+  margin: 0;
   font-size: 14px;
   font-weight: 600;
-  color: #282828;
+  color: #fff;
 }
+
