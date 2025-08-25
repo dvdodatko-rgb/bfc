@@ -78,7 +78,7 @@ const coffeeProfiles = {
     desc: "Класика з шоколадом і горіхами — кава для затишку і стабільності 🍫",
     coffees: [
       { name: "Brazil Mogiana", link: "https://bfc24.com/uk/store/product/33", img: "images/brazil_mogiana.png" },
-      { name: "Colombia Excelso", link: "https://bfc24.com/uk/store/product/35", img: "images/colombia_excelso.png" }
+      { name: "Colombia Excelso", link: "https://bfc24.com/uk/store/product/35", img: "images/colombia_excleso.png" }
     ]
   },
   dessert: {
