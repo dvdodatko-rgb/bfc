@@ -153,20 +153,49 @@ async function showResult() {
   const coffeeSet = coffeeProfiles[winner];
   const coffee = coffeeSet.coffees[Math.floor(Math.random() * coffeeSet.coffees.length)];
 
-  // посилання залежно від країни
+  // визначаємо країну
   const country = await getUserCountry();
-  let finalLink = (country === "UA") ? coffee.link : coffee.link.replace("/uk", "");
+  const adjustLink = (link) => country === "UA" ? link : link.replace("/uk", "");
 
-  resultEl.innerHTML = `
+  // основна кава
+  let html = `
     <h2>Ваша кава — ${coffee.name}</h2>
     <img src="${coffee.img}" alt="${coffee.name}">
     <p>${coffeeSet.desc}</p>
-    <a href="${finalLink}" target="_blank">
+    <a href="${adjustLink(coffee.link)}" target="_blank">
       <button>☕ Замовити</button>
     </a>
   `;
+
+  // додаткові 2 варіанти
+  let otherCoffees = [];
+  Object.keys(coffeeProfiles).forEach(key => {
+    if (key !== winner) {
+      otherCoffees = otherCoffees.concat(coffeeProfiles[key].coffees);
+    }
+  });
+
+  // перемішати й взяти 2 випадкових
+  const shuffled = otherCoffees.sort(() => 0.5 - Math.random()).slice(0, 2);
+
+  if (shuffled.length > 0) {
+    html += `<h3>✨ Вам також може сподобатися:</h3><div class="gallery">`;
+    shuffled.forEach(c => {
+      html += `
+        <div class="gallery-item" style="height: auto;">
+          <img src="${c.img}" alt="${c.name}">
+          <p>${c.name}</p>
+          <a href="${adjustLink(c.link)}" target="_blank">
+            <button>☕ Замовити</button>
+          </a>
+        </div>
+      `;
+    });
+    html += `</div>`;
+  }
+
+  resultEl.innerHTML = html;
   quizEl.classList.add("hidden");
   resultEl.classList.remove("hidden");
 }
 
-document.addEventListener("DOMContentLoaded", showQuestion);
