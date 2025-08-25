@@ -48,7 +48,7 @@ const questions = [
   {
     text: "🌿 Як ти любиш проводити вихідні?",
     answers: [
-      { text: "Прогулянка на природі", tag: "fruit", img: "images/weekend_nature.png" },
+      { text: "Прогулянка", tag: "fruit", img: "images/weekend_nature.png" },
       { text: "Вечірка з друзями", tag: "dark", img: "images/weekend_party.png" },
       { text: "Затишний день вдома", tag: "choco", img: "images/weekend_home.png" },
       { text: "Подорож у нове місто", tag: "dessert", img: "images/weekend_trip.png" }
