@@ -78,3 +78,8 @@ h2 {
   font-weight: 600;
   color: #fff;
 }
+button:hover {
+  background: #73FFD2;
+  color: #282828;
+  transform: scale(1.05);
+}
