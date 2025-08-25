@@ -4,8 +4,8 @@ const questions = [
     text: "🍰 Улюблений десерт дитинства?",
     answers: [
       { text: "Шоколадний торт", tag: "choco", img: "images/dessert_choco.png" },
-      { text: "Мармелад", tag: "fruit", img: "images/dessert_marmelad.png" },
-      { text: "Халва", tag: "dark", img: "images/dessert_halva.png" },
+      { text: "Фруктовий тарт", tag: "fruit", img: "images/dessert_fruit.png" },
+      { text: "Горіхове печиво", tag: "dark", img: "images/dessert_nut.png" },
       { text: "Медовик", tag: "dessert", img: "images/dessert_honey.png" }
     ]
   },
@@ -68,21 +68,21 @@ const questions = [
 // --- Профілі кави ---
 const coffeeProfiles = {
   fruit: {
-    desc: "Яскраві, фруктові, квіткові — для тих, хто любить кислинку й життя у кольорі 🌸 Вгадали? Замов та перевір!",
+    desc: "Яскраві, фруктові, квіткові — для тих, хто любить кислинку й життя у кольорі 🌸",
     coffees: [
       { name: "Ethiopia Gedeb", link: "https://bfc24.com/uk/store/product/43", img: "images/ethiopia_gadeb.png" },
       { name: "Kenya AA Gikanda Kangocho", link: "https://bfc24.com/uk/store/product/39", img: "images/kenya_aa.png" }
     ]
   },
   choco: {
-    desc: "Класика з шоколадом і горіхами — кава для затишку і стабільності 🍫 Вгадали? Замов та перевір!",
+    desc: "Класика з шоколадом і горіхами — кава для затишку і стабільності 🍫",
     coffees: [
       { name: "Brazil Mogiana", link: "https://bfc24.com/uk/store/product/33", img: "images/brazil_mogiana.png" },
       { name: "Colombia Excelso", link: "https://bfc24.com/uk/store/product/35", img: "images/colombia_excelso.png" }
     ]
   },
   dessert: {
-    desc: "Нуга, карамель, солодкий десерт у чашці 🍯 Вгадали? Замов та перевір!",
+    desc: "Нуга, карамель, солодкий десерт у чашці 🍯",
     coffees: [
       { name: "Arabica Midday", link: "https://bfc24.com/uk/store/product/45", img: "images/midday.png" },
       { name: "Arabica Midnight", link: "https://bfc24.com/uk/store/product/31", img: "images/midnight.png" },
@@ -90,14 +90,14 @@ const coffeeProfiles = {
     ]
   },
   dark: {
-    desc: "Насичена, темна, гірка як життя у понеділок ☠️ Вгадали? Замов та перевір!",
+    desc: "Насичена, темна, гірка як життя у понеділок ☠️",
     coffees: [
       { name: "Arabusta Dark", link: "https://bfc24.com/uk/store/product/29", img: "images/dark.png" },
       { name: "Arabusta Amber", link: "https://bfc24.com/uk/store/product/30", img: "images/amber.png" }
     ]
   },
   classic: {
-    desc: "Той самий смак, але без кофеїну 🌙 Вгадали? Замов та перевір!",
+    desc: "Той самий смак, але без кофеїну 🌙",
     coffees: [
       { name: "Decaf Colombia Huila", link: "https://bfc24.com/uk/store/product/34", img: "images/columbia_decaf.png" }
     ]
@@ -110,6 +110,17 @@ let scores = { fruit: 0, choco: 0, dessert: 0, dark: 0, classic: 0 };
 
 const quizEl = document.getElementById("quiz");
 const resultEl = document.getElementById("result");
+
+// API ipapi для визначення країни
+async function getUserCountry() {
+  try {
+    const res = await fetch("https://ipapi.co/json/");
+    const data = await res.json();
+    return data.country_code; // UA, PL, DE, ...
+  } catch {
+    return "UA"; // дефолт
+  }
+}
 
 function showQuestion() {
   quizEl.innerHTML = `<h2>${questions[currentQ].text}</h2>`;
@@ -135,18 +146,22 @@ function showQuestion() {
   quizEl.appendChild(gallery);
 }
 
-function showResult() {
+async function showResult() {
   const winner = Object.keys(scores).reduce((a, b) =>
     scores[a] > scores[b] ? a : b
   );
   const coffeeSet = coffeeProfiles[winner];
   const coffee = coffeeSet.coffees[Math.floor(Math.random() * coffeeSet.coffees.length)];
 
+  // посилання залежно від країни
+  const country = await getUserCountry();
+  let finalLink = (country === "UA") ? coffee.link : coffee.link.replace("/uk", "");
+
   resultEl.innerHTML = `
     <h2>Ваша кава — ${coffee.name}</h2>
     <img src="${coffee.img}" alt="${coffee.name}">
     <p>${coffeeSet.desc}</p>
-    <a href="${coffee.link}" target="_blank">
+    <a href="${finalLink}" target="_blank">
       <button>☕ Замовити</button>
     </a>
   `;
