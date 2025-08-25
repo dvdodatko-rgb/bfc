@@ -2,18 +2,19 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   background: #F5FFF9;
-  color: #03090A;
+  color: #282828;
   margin: 0;
   padding: 20px;
 }
 
 h1 {
-  color: #00A582; /* заголовки h1 тепер зелені */
+  color: #00A582;
 }
 
 h2 {
-  color: #1C545F; /* заголовки h2 темно-бірюзові */
+  color: #1C545F;
 }
+
 #quiz {
   margin: 20px 0;
 }
@@ -27,11 +28,10 @@ button {
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
-  font-size: 16px;
 }
 
 button:hover {
-  background: #FFE389;
+  background: #73FFD2;
   color: #282828;
   transform: scale(1.05);
 }
@@ -46,14 +46,11 @@ button:hover {
   border-radius: 10px;
   background: #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  border: 2px solid #FFE389;
 }
 
-a button {
-  background: #00A582;
-}
-
-a button:hover {
-  background: #73FFD2;
-  color: #282828;
+#result img {
+  max-width: 250px;
+  border-radius: 8px;
+  margin: 15px auto;
+  display: block;
 }
