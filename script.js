@@ -198,4 +198,6 @@ async function showResult() {
   quizEl.classList.add("hidden");
   resultEl.classList.remove("hidden");
 }
+// Запускаємо показ першого питання після завантаження сторінки
+document.addEventListener("DOMContentLoaded", showQuestion);
 
