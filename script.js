@@ -41,7 +41,7 @@ const questions = [
     answers: [
       { text: "Апероль Шприц", tag: "fruit", img: "images/cocktail_aperol.png" },
       { text: "Мохіто", tag: "dessert", img: "images/cocktail_mojito.png" },
-      { text: "Віскі-кола", tag: "dark", img: "images/cocktail_whiskey.png" },
+      { text: "Віскі", tag: "dark", img: "images/cocktail_whiskey.png" },
       { text: "Еспресо мартіні", tag: "choco", img: "images/cocktail_espresso.png" }
     ]
   },
@@ -175,20 +175,16 @@ async function showResult() {
     }
   });
 
-  // перемішати й взяти 2 випадкових
   const shuffled = otherCoffees.sort(() => 0.5 - Math.random()).slice(0, 2);
 
   if (shuffled.length > 0) {
     html += `<h3>✨ Вам також може сподобатися:</h3><div class="gallery">`;
     shuffled.forEach(c => {
       html += `
-        <div class="gallery-item" style="height: auto;">
+        <a href="${adjustLink(c.link)}" target="_blank" class="gallery-item">
           <img src="${c.img}" alt="${c.name}">
           <p>${c.name}</p>
-          <a href="${adjustLink(c.link)}" target="_blank">
-            <button>☕ Замовити</button>
-          </a>
-        </div>
+        </a>
       `;
     });
     html += `</div>`;
@@ -198,6 +194,7 @@ async function showResult() {
   quizEl.classList.add("hidden");
   resultEl.classList.remove("hidden");
 }
-// Запускаємо показ першого питання після завантаження сторінки
+
+// Запуск першого питання
 document.addEventListener("DOMContentLoaded", showQuestion);
 
